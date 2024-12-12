@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { useLoaderData } from "@remix-run/react";
-import Recipe from "components/recipe";
+import Recipe from "~/components/recipe";
 
 const prisma = new PrismaClient();
 

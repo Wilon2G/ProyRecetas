@@ -41,16 +41,16 @@ export default function App() {
       {/* Barra de navegación lateral */}
       <nav className="w-1/6 bg-emerald-900 text-white ">
         <ul className="space-y-4 w-full mt-4">
+        <Link to="/ourRecipes" className=" text-2xl">
           <li className="hover:text-emerald-300 hover:bg-emerald-950 p-4 text-center">
-            <Link to="/ourRecipes" className=" text-2xl">
               Our Recipes
-            </Link>
           </li>
+          </Link>
+          <Link to="/newRecipes" className=" text-2xl">
           <li className="hover:text-emerald-300 hover:bg-emerald-950 p-4 text-center">
-            <Link to="/newRecipes" className=" text-2xl">
               New Recipe
-            </Link>
           </li>
+          </Link>
         </ul>
       </nav>
       
