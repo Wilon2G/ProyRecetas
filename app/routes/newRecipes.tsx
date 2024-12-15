@@ -34,21 +34,24 @@ return {success:true};
 
 export default function NewRecipes() {
     return (
-      <div className="text-white">
-        <h1>New Recipes</h1>
+      <div className="bg-slate-300 w-fit">
+        <h1 className="text-center">New Recipe!</h1>
         <Form method="POST">
           <label>
             Receip Name:
             <input type="text" name="receipName" required/>
           </label>
+          <br/>
           <label>
             Ingredients and quantitys:
-            <input type="text" name="ingredients" required/>
+            <input type="text" name="ingredients" placeholder="Harina 50g, Huevos 3ud, Mantequilla 10g..." required/>
           </label>
+          <br/>
           <label>
             Preparation:
             <input type="text" name="prep" required />
           </label>
+          <br/>
           <button type="submit">Add recipe</button>
         </Form>
       </div>

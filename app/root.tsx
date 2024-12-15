@@ -5,7 +5,8 @@ import {
   MetaFunction,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useNavigation
 } from "@remix-run/react";
 
 import "./tailwind.css";
@@ -17,7 +18,9 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export function Layout() {
+
+
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -27,7 +30,7 @@ export function Layout() {
         <Links />
       </head>
       <body className="bg-emerald-800 text-neutral-100">
-        <App />
+      {children}
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -36,13 +39,15 @@ export function Layout() {
 }
 
 export default function App() {
+  const navigation =useNavigation();
+  const navPath= navigation.location?.pathname;
   return (
     <div className="flex h-screen">
       {/* Barra de navegación lateral */}
       <nav className="w-1/6 bg-emerald-900 text-white ">
         <ul className="space-y-4 w-full mt-4">
-        <Link to="/ourRecipes" className=" text-2xl">
-          <li className="hover:text-emerald-300 hover:bg-emerald-950 p-4 text-center">
+        <Link to="/ourRecipes" className={ `text-2xl `}>
+          <li className={`hover:text-emerald-300 hover:bg-emerald-950 p-4 text-center ${navPath==="/ourRecipes" && "animate-pulse bg-emerald-800"}`}>
               Our Recipes
           </li>
           </Link>
